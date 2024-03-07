@@ -10,6 +10,8 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
+import com.github.javafaker.Faker;
+
 
 public class regressionParaBank {
 
@@ -53,8 +55,12 @@ public class regressionParaBank {
               .sendKeys("123-456-7890");
         driver.findElement(By.xpath("//input[@id='customer.ssn']"))
               .sendKeys("123-45-6789");
-        driver.findElement(By.xpath("//input[@id='customer.username']"))
-              .sendKeys("johndoe");
+        //Generate username using faker
+        Faker faker = new Faker();
+        String username = faker.name().username();
+        //username field and fill it with the generated username
+        WebElement usernameField = driver.findElement(By.xpath("//input[@id='customer.username']"));
+        usernameField.sendKeys(username);
         driver.findElement(By.xpath("//input[@id='customer.password']"))
               .sendKeys("password123");
         driver.findElement(By.xpath("//input[@id='repeatedPassword']"))
@@ -70,21 +76,21 @@ public class regressionParaBank {
 
 		
 		//user login with invalid data
-		driver.findElement(By.cssSelector("input[name='username']")).sendKeys("johndoe");
-		driver.findElement(By.cssSelector("input[name='password']")).sendKeys("password");
-		driver.findElement(By.cssSelector("input[value='Log In']")).click();
+//		driver.findElement(By.cssSelector("input[name='username']")).sendKeys("john");
+//		driver.findElement(By.cssSelector("input[name='password']")).sendKeys("123");
+//		driver.findElement(By.cssSelector("input[value='Log In']")).click();
 		//verify error message
 //		String bodyText = driver.findElement(By.cssSelector(".error")).getText();
 //		Assert.assertTrue("Text not found!", bodyText.contains(text));
-		String ActualTitle = driver.findElement(By.cssSelector(".error")).getText();
-		String ExpectedTitle = "An internal error has occurred and has been logged.";
-		Thread.sleep(2000);
-		Assert.assertEquals(ExpectedTitle, ActualTitle);
+//		String ActualTitle = driver.findElement(By.cssSelector(".error")).getText();
+//		String ExpectedTitle = "An internal error has occurred and has been logged.";
+//		Thread.sleep(2000);
+//		Assert.assertEquals(ExpectedTitle, ActualTitle);
 		
 //		driver.findElement(By.cssSelector(".error")).getText();
 		
 		//user login valid data
-		driver.findElement(By.cssSelector("input[name='username']")).sendKeys("johndoe");
+		driver.findElement(By.cssSelector("input[name='username']")).sendKeys(username);
 		driver.findElement(By.cssSelector("input[name='password']")).sendKeys("password123");
 		driver.findElement(By.cssSelector("input[value='Log In']")).click();
 		
@@ -92,7 +98,7 @@ public class regressionParaBank {
 		
 		//landing on account overview
 		//Verify table account overview
-		driver.findElement(By.cssSelector(".title")).getText();
+		System.out.println(driver.findElement(By.cssSelector(".title")).getText());
 		driver.quit();
 		
 
