@@ -26,17 +26,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import mhdnurfaizzy.pageobjects.LandingPage;
-import mhdnurfaizzy.pageobjects.LandingPageParaBank;
 
-public class baseTestParaBank {
+public class baseTestBank {
 	
 	public WebDriver driver;
-	public LandingPageParaBank landingPageParaBank;
+	public LandingPage landingPage;
 
 	public WebDriver Inittialized() throws IOException {
 		
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\mhdnurfaizzy\\resource\\globalData.properties");
+//		/Users/mac/eclipse-workspace/paraBankSelenium/paraBank/src/main/java/mhdnurfaizzy/resource/globalData.properties
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//java//mhdnurfaizzy//resource//globalData.properties");
 		prop.load(fis);
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
 //		String browserName = prop.getProperty("browser");
@@ -88,12 +88,13 @@ public class baseTestParaBank {
 	
 	
 	@BeforeMethod(alwaysRun= true)
-	public LandingPageParaBank launchApplication() throws IOException
+	public void launchApplication() throws IOException
 	{
 		 driver = Inittialized();
-		 landingPageParaBank = new LandingPageParaBank(driver);
-		 landingPageParaBank.goTo();
-		 return landingPageParaBank;
+		 driver.get("https://parabank.parasoft.com/");
+//			landingPage = new LandingPage(driver);
+//			landingPage.goTo();
+//			return landingPage;
 		 
 	}
 	
@@ -102,6 +103,8 @@ public class baseTestParaBank {
 	{
 		driver.quit();
 	}
+
+	
 	
 	
 	

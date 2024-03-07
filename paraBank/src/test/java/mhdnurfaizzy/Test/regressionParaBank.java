@@ -1,39 +1,31 @@
 package mhdnurfaizzy.Test;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import com.github.javafaker.Faker;
 import mhdnurfaizzy.pageobjects.RegistrationPage;
+import mhdnurfaizzy.testComponent.baseTestBank;
 
 
-public class regressionParaBank {
+public class regressionParaBank extends baseTestBank {
+	
+	public static WebDriver driver;
 
-	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
-		
-		//headless mode
-		EdgeOptions options = new EdgeOptions();  
-		options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors"); 
-		WebDriver driver = new EdgeDriver();
-		
-		driver.get("https://parabank.parasoft.com/");
+	@Test
+	public void regresion() throws InterruptedException {
 		
 		//Register new account
 		//go to register page
-		FluentWait<WebDriver> wait = new FluentWait<>(driver)
-	            .withTimeout(Duration.ofSeconds(30))
-	            .pollingEvery(Duration.ofSeconds(1));
+//		FluentWait<WebDriver> wait = new FluentWait<>(driver)
+//	            .withTimeout(Duration.ofSeconds(30))
+//	            .pollingEvery(Duration.ofSeconds(1));
 
 	    // Wait for the element to be clickable
-	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Register']")));
+//	    wait.until(ExpectedConditions.elementToBeClickable
+		Thread.sleep(2000);
+	    driver.findElement(By.xpath("//a[normalize-space()='Register']")).click();
 
         RegistrationPage registrationPage = new RegistrationPage(driver);
 
@@ -62,7 +54,7 @@ public class regressionParaBank {
         // End of Register Account
         
         //Logout 
-	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Log Out']")));
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[normalize-space()='Log Out']")).click();
 
 		//user login valid data

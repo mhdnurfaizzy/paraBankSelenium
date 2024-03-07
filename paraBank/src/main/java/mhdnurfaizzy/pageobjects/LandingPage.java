@@ -9,8 +9,6 @@ import mhdnurfaizzy.AbstractComponenet.abstractComponent;
 
 public class LandingPage extends abstractComponent{
 
-	
-
 	WebDriver driver;
 	
 	public LandingPage(WebDriver driver)
