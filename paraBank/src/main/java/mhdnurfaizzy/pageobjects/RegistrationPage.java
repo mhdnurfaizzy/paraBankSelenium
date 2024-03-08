@@ -11,7 +11,7 @@ public class RegistrationPage {
 	
 	public RegistrationPage(WebDriver driver)
 	{
-		super();
+//		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}

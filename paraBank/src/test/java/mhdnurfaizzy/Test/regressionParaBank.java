@@ -5,28 +5,23 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
+
+import mhdnurfaizzy.pageobjects.LandingPageBank;
 import mhdnurfaizzy.pageobjects.RegistrationPage;
 import mhdnurfaizzy.testComponent.baseTestBank;
 
 
 public class regressionParaBank extends baseTestBank {
 	
-	public static WebDriver driver;
+//	public static WebDriver driver;
 
 	@Test
 	public void regresion() throws InterruptedException {
 		
-		//Register new account
-		//go to register page
-//		FluentWait<WebDriver> wait = new FluentWait<>(driver)
-//	            .withTimeout(Duration.ofSeconds(30))
-//	            .pollingEvery(Duration.ofSeconds(1));
 
-	    // Wait for the element to be clickable
-//	    wait.until(ExpectedConditions.elementToBeClickable
-		Thread.sleep(2000);
-	    driver.findElement(By.xpath("//a[normalize-space()='Register']")).click();
-
+	    LandingPageBank landingPageBank = new LandingPageBank(driver);
+	    landingPageBank.goToRegisterPage();
+	    
         RegistrationPage registrationPage = new RegistrationPage(driver);
 
         // Click on the Register link

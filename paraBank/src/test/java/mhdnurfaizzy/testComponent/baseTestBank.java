@@ -15,6 +15,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -41,19 +42,19 @@ public class baseTestBank {
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
 //		String browserName = prop.getProperty("browser");
 		
-		if(browserName.contains("edge")) {
-			EdgeOptions Options = new EdgeOptions();
-			WebDriverManager.edgedriver().setup();
+		if(browserName.contains("chrome")) {
+			ChromeOptions Options = new ChromeOptions();
+			WebDriverManager.chromedriver().setup();
 			if(browserName.contains("headless")) {
 				Options.addArguments("headless");
 			}
-			driver = new EdgeDriver(Options);
+			driver = new ChromeDriver(Options);
 			driver.manage().window().setSize(new Dimension(1440,990)); //full screen
 			
-		} else if(browserName.equalsIgnoreCase("chrome"))
+		} else if(browserName.equalsIgnoreCase("edge"))
 			{
 			//ChromeDriver
-			driver = new ChromeDriver();
+			driver = new EdgeDriver();
 
 			} else if(browserName.equalsIgnoreCase("firefox"))
 				{
