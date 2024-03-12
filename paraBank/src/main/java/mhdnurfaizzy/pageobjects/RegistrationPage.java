@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.github.javafaker.Faker;
+
 public class RegistrationPage {
 	
 	WebDriver driver;
@@ -77,6 +79,13 @@ public class RegistrationPage {
     
     public void clickRegister() {
     	register.click();
+    }
+    
+    public String generateUsername() {
+        // Generate username using Faker or any other method
+        Faker faker = new Faker();
+        String username = faker.name().username();
+        return username;
     }
 	
 }

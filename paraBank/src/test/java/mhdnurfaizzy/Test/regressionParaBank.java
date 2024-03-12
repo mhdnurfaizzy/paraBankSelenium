@@ -55,8 +55,6 @@ public class regressionParaBank extends baseTestBank {
         //Logout 
         Thread.sleep(2000);
         driver.findElement(By.xpath("//a[normalize-space()='Log Out']")).click();
-        
-        
 
 	}
 	
@@ -75,14 +73,7 @@ public class regressionParaBank extends baseTestBank {
 		
 		
         }
-	
-//	   private String generateUsername() {
-//	        // Generate username using Faker or any other method
-//	        // For example, using Faker
-//	        Faker faker = new Faker();
-//	        String username = faker.name().username();
-//	        return username;
-//	    }
+
 
 }
 
