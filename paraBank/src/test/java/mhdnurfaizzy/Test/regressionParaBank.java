@@ -38,11 +38,7 @@ public class regressionParaBank extends baseTestBank {
         String zipCode = faker.address().zipCode();
         String phoneNumber = faker.phoneNumber().phoneNumber();
         String ssn = faker.idNumber().validSvSeSsn();
-//        String username = faker.name().username();
-//        generatedUsername = generateUsername();
         username = registrationPage.generateUsername();
-
-        
         String password = "password123"; // Use a fixed password for simplicity
 
 

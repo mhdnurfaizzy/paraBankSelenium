@@ -22,6 +22,10 @@ public class abstractComponent {
 	@FindBy(css="[routerlink*='myorders']")
 	 WebElement orderHeader;
 	
+	@FindBy(xpath="//a[normalize-space()='Log Out']")
+	WebElement logOutButton;
+
+	
 	public abstractComponent(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
@@ -56,6 +60,12 @@ public class abstractComponent {
 		orderHeader.click();
 		OrderPage orderPage = new OrderPage(driver);
 		return orderPage;
+	}
+	
+	//element logout button
+	public void logOut() {
+		logOutButton.click();
+		
 	}
 
 }
