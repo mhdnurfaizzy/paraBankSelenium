@@ -52,13 +52,16 @@ public class baseTestBank {
 			driver.manage().window().setSize(new Dimension(1440,990)); //full screen
 			
 		} else if(browserName.equalsIgnoreCase("edge"))
+			
 			{
 			//ChromeDriver
 			driver = new EdgeDriver();
+			driver.manage().window().setSize(new Dimension(1440,990)); //full screen
 
 			} else if(browserName.equalsIgnoreCase("firefox"))
 				{
 				driver = new FirefoxDriver();
+				driver.manage().window().setSize(new Dimension(1440,990)); //full screen
 
 				}
 		
