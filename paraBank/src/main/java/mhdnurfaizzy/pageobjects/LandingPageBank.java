@@ -52,4 +52,6 @@ public class LandingPageBank extends abstractComponent{
 		return productCatalog;
 		
 	}
+	
+	
 }

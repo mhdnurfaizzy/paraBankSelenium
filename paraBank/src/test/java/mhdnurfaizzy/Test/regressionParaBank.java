@@ -13,7 +13,7 @@ import mhdnurfaizzy.testComponent.baseTestBank;
 
 public class regressionParaBank extends baseTestBank {
 	
-	private String generatedUsername;
+	private String username;
 
 	@Test
 	public void registration() throws InterruptedException {
@@ -39,13 +39,15 @@ public class regressionParaBank extends baseTestBank {
         String phoneNumber = faker.phoneNumber().phoneNumber();
         String ssn = faker.idNumber().validSvSeSsn();
 //        String username = faker.name().username();
-        generatedUsername = generateUsername();
+//        generatedUsername = generateUsername();
+        username = registrationPage.generateUsername();
+
         
         String password = "password123"; // Use a fixed password for simplicity
 
 
         // Fill the registration form
-        registrationPage.fillRegistrationForm(firstName, lastName, address, city, state, zipCode, phoneNumber, ssn, generatedUsername, password);
+        registrationPage.fillRegistrationForm(firstName, lastName, address, city, state, zipCode, phoneNumber, ssn, username, password);
         registrationPage.clickRegister();
         
         // End of Register Account
@@ -58,27 +60,29 @@ public class regressionParaBank extends baseTestBank {
 
 	}
 	
+	
+	@Test(dependsOnMethods= {"registration"})
 	public void Login() { 
 		//user login valid data
-		driver.findElement(By.cssSelector("input[name='username']")).sendKeys(generatedUsername);
+		driver.findElement(By.cssSelector("input[name='username']")).sendKeys(username);
 		driver.findElement(By.cssSelector("input[name='password']")).sendKeys("password123");
 		driver.findElement(By.cssSelector("input[value='Log In']")).click();
 		
 		//landing on account overview
 		//Verify table account overview
 		System.out.println(driver.findElement(By.cssSelector(".title")).getText());
-		driver.quit();
+	
 		
 		
         }
 	
-	   private String generateUsername() {
-	        // Generate username using Faker or any other method
-	        // For example, using Faker
-	        Faker faker = new Faker();
-	        String username = faker.name().username();
-	        return username;
-	    }
+//	   private String generateUsername() {
+//	        // Generate username using Faker or any other method
+//	        // For example, using Faker
+//	        Faker faker = new Faker();
+//	        String username = faker.name().username();
+//	        return username;
+//	    }
 
 }
 
