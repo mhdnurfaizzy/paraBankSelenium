@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-03-12T10:41:56 ICT" name="Default suite" finished-at="2024-03-12T10:42:22 ICT" duration-ms="26275">
+    <groups>
+    </groups>
+    <test started-at="2024-03-12T10:41:56 ICT" name="Default test" finished-at="2024-03-12T10:42:22 ICT" duration-ms="26275">
+      <class name="mhdnurfaizzy.Test.regressionParaBank">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:mhdnurfaizzy.Test.regressionParaBank@397fbdb]" started-at="2024-03-12T10:41:56 ICT" name="launchApplication" finished-at="2024-03-12T10:42:04 ICT" duration-ms="7481" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="registration()[pri:0, instance:mhdnurfaizzy.Test.regressionParaBank@397fbdb]" started-at="2024-03-12T10:42:04 ICT" name="registration" finished-at="2024-03-12T10:42:12 ICT" duration-ms="8268" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registration -->
+        <test-method is-config="true" signature="endTest()[pri:0, instance:mhdnurfaizzy.Test.regressionParaBank@397fbdb]" started-at="2024-03-12T10:42:12 ICT" name="endTest" finished-at="2024-03-12T10:42:12 ICT" duration-ms="358" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:mhdnurfaizzy.Test.regressionParaBank@397fbdb]" started-at="2024-03-12T10:42:12 ICT" name="launchApplication" finished-at="2024-03-12T10:42:20 ICT" duration-ms="7284" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="Login()[pri:0, instance:mhdnurfaizzy.Test.regressionParaBank@397fbdb]" started-at="2024-03-12T10:42:20 ICT" name="Login" finished-at="2024-03-12T10:42:22 ICT" depends-on-methods="mhdnurfaizzy.Test.regressionParaBank.registration" duration-ms="2610" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method is-config="true" signature="endTest()[pri:0, instance:mhdnurfaizzy.Test.regressionParaBank@397fbdb]" started-at="2024-03-12T10:42:22 ICT" name="endTest" finished-at="2024-03-12T10:42:22 ICT" duration-ms="236" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+      </class> <!-- mhdnurfaizzy.Test.regressionParaBank -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
